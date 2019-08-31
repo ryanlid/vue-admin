@@ -20,5 +20,5 @@ yarn add element-ui
 
 ### 封装 axios
 
-[查看相关代码]('./utils/request.js')
+[查看相关代码](src/utils/request.js)
 
