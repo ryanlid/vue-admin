@@ -1,29 +1,24 @@
 # vue-admin-template
+## 初始化项目
 
-## Project setup
-```
-yarn install
-```
+### @vue/cli 初始化项目
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
+```bash
+features: Babel, Router, Vuex, Linter
+mode for router: hash
+linter config: Prettier
+lint features: Lint on save
+placing config for Babel, PostCSS, ESLint, etc.? In package.json
 ```
 
-### Run your tests
+### 添加第三方依赖包
+
 ```
-yarn run test
+yarn add axios
+yarn add element-ui
 ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
+### 封装 axios
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[查看相关代码]('./utils/request.js')
+
