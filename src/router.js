@@ -1,15 +1,26 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 
 Vue.use(Router);
+
+/* Layout */
+import Layout from "@/layout";
 
 export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      component: Layout,
+      redirect: "/dashboard",
+      meta: { title: "Dashboard", icon: "dashboard" },
+      children: [
+        {
+          path: "dashboard",
+          component: () => import("@/views/dashboard/index"),
+          name: "Dashboard",
+          meta: { title: "Dashboard", icon: "dashboard" }
+        }
+      ]
     },
     {
       path: "/about",
@@ -18,7 +29,8 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ "./views/About.vue"),
+      meta: { title: "about", icon: "about" }
     }
   ]
 });
