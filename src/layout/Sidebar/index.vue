@@ -1,12 +1,22 @@
 <template>
   <div class="side-bar">
     <el-scrollbar>
-      <SidebarItem
-        v-for="route in routes"
-        :item="route"
-        :key="route.path"
-      ></SidebarItem>
+      <el-menu
+        :collapse="isCollapse"
+        :unique-opened="false"
+        :collapse-transition="false"
+        mode="vertical"
+      >
+        <sidebar-item
+          v-for="route in routes"
+          :item="route"
+          :key="route.path"
+          :base-path="route.path"
+        ></sidebar-item>
+      </el-menu>
     </el-scrollbar>
+
+    <!-- {{'route'}}{{routes}} -->
   </div>
 </template>
 
@@ -16,8 +26,10 @@ export default {
   name: "Sidebar",
   computed: {
     routes() {
-      console.log(this.$router.options.routes);
       return this.$router.options.routes;
+    },
+    isCollapse() {
+      // return !this.sidebar.opened
     }
   },
   components: {
