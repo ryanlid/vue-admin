@@ -23,64 +23,33 @@ export default new Router({
       ]
     },
     {
-      path: "/setting",
+      path: "/settings",
       component: Layout,
       meta: { title: "系统设置", icon: "menu" },
       children: [
         {
           path: "base",
-          component: () => import("@/views/dashboard/index"),
+          component: () => import("@/views/settings/base"),
           name: "base",
           meta: { title: "base" }
         },
         {
           path: "project",
-          component: () => import("@/views/dashboard/index"),
+          component: () => import("@/views/settings/project"),
           name: "project",
           meta: { title: "project" }
         },
         {
           path: "plan",
-          component: () => import("@/views/dashboard/index"),
+          component: () => import("@/views/settings/plan"),
           name: "plan",
           meta: { title: "plan" }
         },
         {
           path: "issue",
-          component: () => import("@/views/dashboard/index"),
+          component: () => import("@/views/settings/issue"),
           name: "issue",
           meta: { title: "issue" }
-        }
-      ]
-    },
-    {
-      path: "/approve",
-      component: Layout,
-      meta: { title: "审批中心", icon: "menu" },
-      children: [
-        {
-          path: "settings",
-          component: () => import("@/views/dashboard/index"),
-          name: "approveSettings",
-          meta: { title: "审批设置" }
-        },
-        {
-          path: "project",
-          component: () => import("@/views/dashboard/index"),
-          name: "approveProject",
-          meta: { title: "project设置" }
-        },
-        {
-          path: "plan",
-          component: () => import("@/views/dashboard/index"),
-          name: "approvePlan",
-          meta: { title: "plan设置" }
-        },
-        {
-          path: "issue",
-          component: () => import("@/views/dashboard/index"),
-          name: "approveissue",
-          meta: { title: "issue设置" }
         }
       ]
     },
@@ -98,6 +67,18 @@ export default new Router({
           component: () =>
             import(/* webpackChunkName: "about" */ "./views/About.vue"),
           meta: { title: "about", icon: "about" }
+        }
+      ]
+    },
+    {
+      path: "/external-link",
+      component: Layout,
+      meta: { title: "Dashboard", icon: "location" },
+      children: [
+        {
+          path: "https://panjiachen.github.io/vue-element-admin-site/#/",
+          name: "about1",
+          meta: { title: "External Link", icon: "link" }
         }
       ]
     }
