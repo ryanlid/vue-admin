@@ -4,6 +4,7 @@
     <div class="main-container">
       <div>
         <navbar />
+        <Tagsview />
       </div>
       <app-main />
     </div>
@@ -13,6 +14,7 @@
 <script>
 import Navbar from "./Navbar/index";
 import Sidebar from "./Sidebar/index";
+import Tagsview from "./Tagsview/index";
 import AppMain from "./AppMain/index";
 
 export default {
@@ -34,6 +36,7 @@ export default {
   components: {
     Navbar,
     Sidebar,
+    Tagsview,
     AppMain
   }
 };
