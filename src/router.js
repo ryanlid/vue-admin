@@ -25,7 +25,7 @@ export default new Router({
     {
       path: "/settings",
       component: Layout,
-      meta: { title: "系统设置", icon: "menu" },
+      meta: { title: "系统设置", icon: "s-tools" },
       children: [
         {
           path: "base",
@@ -54,9 +54,35 @@ export default new Router({
       ]
     },
     {
+      path: "/table",
+      component: Layout,
+      meta: { title: "Table", icon: "document" },
+      children: [
+        {
+          path: "index",
+          component: () => import("@/views/table/index"),
+          name: "tableIndex",
+          meta: { title: "Table" }
+        }
+      ]
+    },
+    {
+      path: "/form",
+      component: Layout,
+      meta: { title: "Form", icon: "s-grid" },
+      children: [
+        {
+          path: "formIndex",
+          component: () => import("@/views/form/index"),
+          name: "tableIndex",
+          meta: { title: "Form" }
+        }
+      ]
+    },
+    {
       path: "/about",
       component: Layout,
-      meta: { title: "Dashboard", icon: "location" },
+      meta: { title: "Dashboard", icon: "lollipop" },
       children: [
         {
           path: "",
@@ -66,7 +92,7 @@ export default new Router({
           // which is lazy-loaded when the route is visited.
           component: () =>
             import(/* webpackChunkName: "about" */ "./views/About.vue"),
-          meta: { title: "about", icon: "about" }
+          meta: { title: "About", icon: "about" }
         }
       ]
     },
@@ -76,7 +102,7 @@ export default new Router({
       meta: { title: "Dashboard", icon: "location" },
       children: [
         {
-          path: "https://panjiachen.github.io/vue-element-admin-site/#/",
+          path: "https://www.baidu.com",
           name: "about1",
           meta: { title: "External Link", icon: "link" }
         }
