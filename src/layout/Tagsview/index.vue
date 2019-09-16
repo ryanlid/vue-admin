@@ -84,6 +84,8 @@ export default {
 
 <style lang="less" scoped>
 .tags-view-wrapper {
+  border-top: solid #ddd 1px;
+  border-bottom: solid #ddd 1px;
   .tags-view-item {
     display: inline-block;
     position: relative;
@@ -97,6 +99,7 @@ export default {
     font-size: 12px;
     margin-left: 5px;
     margin-top: 4px;
+    margin-bottom: 4px;
     &:first-of-type {
       margin-left: 15px;
     }

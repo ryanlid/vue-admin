@@ -1,5 +1,5 @@
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper" :class="classObj">
     <sidebar class="sidebar-container" />
     <div class="main-container">
       <div>
@@ -21,11 +21,22 @@ export default {
   name: "Layout",
   data() {
     return {
-      device: "",
-      sidebar: {
-        opened: true
-      }
+      device: ""
+      // sidebar: {
+      //   opened: true
+      // }
     };
+  },
+  computed: {
+    sidebar() {
+      return this.$store.state.app.sidebar;
+    },
+    classObj() {
+      return {
+        openSidebar: this.sidebar.opened,
+        hideSidebar: !this.sidebar.opened
+      };
+    }
   },
   methods: {
     handleClickOutside() {
@@ -41,25 +52,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.sidebar-container {
-  transition: width 0.28s;
-  width: 210px !important;
-  background-color: #304156;
-  height: 100%;
-  position: fixed;
-  font-size: 0px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1001;
-  overflow: hidden;
-}
-.main-container {
-  min-height: 100%;
-  transition: margin-left 0.28s;
-  margin-left: 210px;
-  position: relative;
-}
-</style>

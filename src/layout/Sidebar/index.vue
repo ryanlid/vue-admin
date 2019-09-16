@@ -28,8 +28,11 @@ export default {
     routes() {
       return this.$router.options.routes;
     },
+    sidebar() {
+      return this.$store.state.app.sidebar;
+    },
     isCollapse() {
-      // return !this.sidebar.opened
+      return !this.sidebar.opened;
     }
   },
   components: {
@@ -37,3 +40,10 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+.el-menu {
+  background-color: #304156;
+  color: #fff;
+}
+</style>

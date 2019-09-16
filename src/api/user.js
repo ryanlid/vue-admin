@@ -27,3 +27,22 @@ export function logout(data) {
     });
   });
 }
+
+export function getInfo(token) {
+  // return request({
+  //   url: '/user/info',
+  //   method: 'get',
+  //   params: { token }
+  // })
+
+  return new Promise((resolve, reject) => {
+    resolve({
+      data: {
+        roles: ["admin"],
+        introduction: "I am a super administrator",
+        avatar: "https://avatars1.githubusercontent.com/u/6867964?s=40&v=4",
+        name: "Super Admin"
+      }
+    });
+  });
+}
