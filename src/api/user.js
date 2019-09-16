@@ -15,3 +15,15 @@ export function login(data) {
     });
   });
 }
+export function logout(data) {
+  // return request({
+  //   url: '/user/logout',
+  //   method: 'post',
+  //   data
+  // })
+  return new Promise((resolve, reject) => {
+    resolve({
+      data: {}
+    });
+  });
+}
