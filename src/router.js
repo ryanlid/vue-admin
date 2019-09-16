@@ -74,7 +74,7 @@ export default new Router({
         {
           path: "formIndex",
           component: () => import("@/views/form/index"),
-          name: "tableIndex",
+          name: "formIndex",
           meta: { title: "Form" }
         }
       ]
